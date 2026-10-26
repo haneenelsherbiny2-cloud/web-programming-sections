@@ -1,0 +1,129 @@
+.page-header{
+    background-image:
+     linear-gradient(rgba(0,0,0,0.3) , rgba(0,0,0,0.3)), url(images/Header.jpeg);
+    background-repeat: no-repeat;
+    height: 500px;
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-header h1{
+    font-family:"Roboto Slab", serif;
+    font-size: 36px;
+    font-weight: normal;
+    color:white;
+    text-align: center;
+    max-width: 780px;
+    margin: 0px;
+}
+
+.profile{
+    font-family:'Source Sans Pro',sans-serif;
+    font-size: 18px;
+    color:rgb(51,51,51);
+    line-height: 24px;
+    display: flex;
+    text-align: center;
+    position: relative;
+    margin-top: -30px;
+    align-items: center;
+    flex-direction: column;
+
+}
+.author{
+   font-weight: bold;
+}
+.update{
+    font-style: italic;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e6e6e6;
+
+}
+.profile-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    border: 1px thick white;
+    object-fit: cover;
+
+
+}
+
+
+
+.article {
+    width: 66.67%;
+    margin: 60px auto;
+}
+
+.drink {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.drink-number {
+    font-family: "Roboto Slab", serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.25);
+    width: 20px;
+
+}
+
+.drink-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.drink-content h2 {
+    font-family: "Roboto Slab", serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    margin: 0 0 10px;
+    line-height: 1.2;
+    
+}
+
+.drink-address {
+    margin: 0 0 20px;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.drink-address a {
+    color: #42b4d6;
+    font-weight: normal;
+    text-decoration: none;
+}
+.drink-address a:hover {
+    text-decoration: underline;
+}
+
+.drink-description,
+.recommendation {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+    color: rgb(51, 51, 51);
+}
+
+.drink-description {
+    margin: 0 0 20px;
+}
+
+.recommendation {
+    margin: 0 0 20px;
+}
+
+.drink-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}

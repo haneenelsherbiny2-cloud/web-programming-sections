@@ -1,0 +1,22 @@
+.title{
+    text-transform:uppercase;
+    text-align: center;
+}
+.x{
+    text-decoration:line-through;
+    text-decoration-thickness: 3px;
+}
+
+p{
+    border: red 5px dashed;
+    padding: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+    text-indent: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+}
+
+.bg{
+    background-color: gray;
+}

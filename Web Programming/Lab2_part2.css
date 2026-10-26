@@ -1,0 +1,46 @@
+html
+{
+  background-color: cyan;
+}
+
+h1
+{
+    text-align: center;
+    color: blue;
+}
+
+hr
+{
+  color:white ;
+}
+
+h2
+{
+    text-align: center;
+}
+
+.I
+ {
+  font-weight: bold;
+ }
+
+ .silver
+ {
+    color:hsl(0,0%, 75.3%)
+ }
+
+ .fuchsia
+ {
+    color: #ff00ff;
+ }
+
+ .orange
+ {
+    color:rgb(255 140 0 );
+ }
+
+ .II
+ {
+    text-decoration: underline;
+    font-weight: bolder;
+ }
