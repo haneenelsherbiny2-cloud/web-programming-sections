@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Card</title>
+    <style>
+        #my-card{
+            background-color: lightgray;
+            padding: 30px;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="my-card">
+        <button id="change-btn">Change Color</button>
+    </div>
+    <script defer>
+        let card=document.getElementById("my-card");
+        let button=document.getElementById("change-btn");
+        button.addEventListener("click",function(){
+            card.style.backgroundColor="lightblue";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compass Game</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+        }
+
+        .compass {
+            display: table;
+            border-spacing: 15px;
+            margin: 25px 0;
+        }
+
+        .compass .row {
+            display: table-row;
+        }
+
+        .compass .cell {
+            display: table-cell;
+            width: 55px;
+            height: 55px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .direction {
+            font-size: 25px;
+            font-weight: bold;
+            color: #743d52;
+        }
+
+        .arrow {
+            width: 40px;
+            height: 40px;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .diagonal {
+            transform: rotate(-45deg);
+        }
+
+        input {
+            width: 15px;
+            max-width: 15px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .controls {
+            margin-top: 15px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        button:disabled,
+        input:disabled {
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Compass Game</h1>
+
+    <p>
+        The direction letters on the "compass" are scrambled.
+        Press the arrows to properly position the direction letters.
+    </p>
+
+    <div class="compass">
+
+        <div class="row">
+            <div class="cell">
+                <button class="arrow diagonal" onclick="swap('top', 'left')">
+                    ↔
+                </button>
+            </div>
+
+            <div class="cell direction" id="top">S</div>
+
+            <div class="cell"></div>
+        </div>
+
+        <div class="row">
+            <div class="cell direction" id="left">E</div>
+
+            <div class="cell">
+                <button class="arrow" onclick="swap('left', 'right')">
+                    ↔
+                </button>
+            </div>
+
+            <div class="cell direction" id="right">W</div>
+        </div>
+
+        <div class="row">
+            <div class="cell"></div>
+
+            <div class="cell direction" id="bottom">N</div>
+
+            <div class="cell">
+                <button class="arrow diagonal" onclick="swap('right', 'bottom')">
+                    ↔
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <p>
+        To restart the game, press <i>Restart</i>, enter
+        N, S, E, and W in any order in the boxes below,
+        and then press <i>Update</i>.
+    </p>
+
+    <button onclick="restartGame()">Restart</button>
+
+    <br><br>
+
+    <div class="controls">
+
+        <label>Top</label>
+        <input type="text" id="topInput" maxlength="1" disabled>
+
+        <label>Left</label>
+        <input type="text" id="leftInput" maxlength="1" disabled>
+
+        <label>Right</label>
+        <input type="text" id="rightInput" maxlength="1" disabled>
+
+        <label>Bottom</label>
+        <input type="text" id="bottomInput" maxlength="1" disabled>
+
+    </div>
+
+    <br>
+
+    <button id="updateBtn" onclick="updateGame()" disabled>
+        Update
+    </button>
+
+    <noscript>
+        <p style="color:red;">
+            Warning: JavaScript is disabled in your browser.
+            Please enable JavaScript to play this game.
+        </p>
+    </noscript>
+
+    <script>
+
+        function restartGame() {
+
+            document.getElementById("top").textContent = "";
+            document.getElementById("left").textContent = "";
+            document.getElementById("right").textContent = "";
+            document.getElementById("bottom").textContent = "";
+
+            document.getElementById("topInput").disabled = false;
+            document.getElementById("leftInput").disabled = false;
+            document.getElementById("rightInput").disabled = false;
+            document.getElementById("bottomInput").disabled = false;
+
+            document.getElementById("topInput").value = "";
+            document.getElementById("leftInput").value = "";
+            document.getElementById("rightInput").value = "";
+            document.getElementById("bottomInput").value = "";
+
+            document.getElementById("updateBtn").disabled = false;
+        }
+
+
+        function updateGame() {
+
+            let topValue = document.getElementById("topInput").value.toUpperCase();
+            let leftValue = document.getElementById("leftInput").value.toUpperCase();
+            let rightValue = document.getElementById("rightInput").value.toUpperCase();
+            let bottomValue = document.getElementById("bottomInput").value.toUpperCase();
+
+            document.getElementById("top").textContent = topValue;
+            document.getElementById("left").textContent = leftValue;
+            document.getElementById("right").textContent = rightValue;
+            document.getElementById("bottom").textContent = bottomValue;
+
+            document.getElementById("topInput").disabled = true;
+            document.getElementById("leftInput").disabled = true;
+            document.getElementById("rightInput").disabled = true;
+            document.getElementById("bottomInput").disabled = true;
+
+            document.getElementById("updateBtn").disabled = true;
+        }
+
+
+        function swap(first, second) {
+
+            let firstElement = document.getElementById(first);
+            let secondElement = document.getElementById(second);
+
+            let temp = firstElement.textContent;
+
+            firstElement.textContent = secondElement.textContent;
+            secondElement.textContent = temp;
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+</head>
+<body>
+    <h2>Tip Calculator</h2>
+    <input type="number" id="bill" placeholder="Enter bill amount">
+    <button id="calculate-btn" >Calculate Tip</button>
+    <p id="tip-total"></p>
+    <p id="total-result"></p>
+    <p id="error" style="color:red;"></p>
+
+    <script>
+        let bill =document.getElementById("bill");
+        let button = document.getElementById("calculate-btn");
+        let tipResult=document.getElementById("tip-total");
+        let totalResult=document.getElementById("total-result");
+        let error=document.getElementById("error");
+        button.addEventListener("click",function(){
+            let amount=Number(bill.value);
+            if(bill.value=="" || amount<0 ||Number.isNaN(amount)){
+                error.textContent="Please enter a valid bill amount !";
+                tipResult.textContent='';
+                totalResult.textContent='';
+            }
+            else{
+                error.textContent='';
+                let tip=amount*0.15;
+                let total=amount+tip;
+                tipResult.textContent="Tip Amount:$"+tip.toFixed(2);
+                totalResult.textContent="Total Bill:$"+total.toFixed(2);
+            }
+        })
+    </script>
+</body>
+</html>
